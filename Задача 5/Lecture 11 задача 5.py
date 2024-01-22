@@ -2,6 +2,7 @@
 class SuperStr(str):
     def __init__(self, s):
         self.s = s
+        super().__init__()
 
     def is_repeatance(self, s_str):
         value = len(self.s) % len(s_str)
