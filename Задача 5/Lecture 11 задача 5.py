@@ -6,17 +6,17 @@ class SuperStr(str):
     def is_repeatance(self, s_str):
         value = len(self.s) % len(s_str)
         if value == 0:
-            print("True - строка получена целым количеством повторов строки s")
+            return True
         else:
-            print("False - строка НЕ получена целым количеством повторов строки s")
+            return False
 
     def is_palindrome(self):
         if self.s.lower() == self.s[::-1].lower():
-            print("Палиндром")
+            return True
         else:
-            print("Не палиндром")
+            return False
 
 
 test = SuperStr('qwertytrewq')
-test.is_palindrome()
-test.is_repeatance("1234")
+print(test.is_palindrome())
+print(test.is_repeatance("1234"))

@@ -30,6 +30,11 @@ class Sphere:
     def set_radius(self, rad=1):
         self.rad = rad
 
+    def is_point_inside(self, x, y, z):
+        if x ** 2 + y ** 2 + z ** 2 > self.rad ** 2:
+            return False
+        else:
+            return True
 
 d = Sphere()
 d.get_volume(5)
@@ -37,3 +42,4 @@ d.get_square(5)
 d.get_radius()
 d.get_center()
 d.set_radius(10)
+print(d.is_point_inside(1, 2, 1))

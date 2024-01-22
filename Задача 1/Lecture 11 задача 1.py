@@ -6,11 +6,10 @@ class Soda:
 
     def exam(self):
         if self.name == "":
-            print("У вас обычная газировка")
+            return print("У вас обычная газировка")
         else:
-            print(f"Ваша газировка имеет {self.name} вкус")
+            return print(f"Ваша газировка имеет {self.name} вкус")
 
 
-taste = input("Введите вкус: ")
-name = Soda(taste)
-name.exam()
+test = Soda("лимонный")
+test.exam()
