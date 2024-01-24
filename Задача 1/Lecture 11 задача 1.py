@@ -8,7 +8,7 @@ class Soda:
         if self.name == "":
             return "У вас обычная газировка"
         else:
-            return f"Ваша газировка имеет {self.name} вкус"
+            return f"Ваша газировка имеет {self.name} вкус!"
 
 
 test = Soda()

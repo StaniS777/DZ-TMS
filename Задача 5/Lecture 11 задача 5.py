@@ -5,7 +5,12 @@ class SuperStr(str):
             return False
         else:
             if (len(self) % len(s)) == 0:
-                return True
+                n = len(self) // len(s)
+                self_1 = n * s
+                if self == self_1:
+                    return True
+                else:
+                    return False
             else:
                 return False
 
@@ -16,6 +21,6 @@ class SuperStr(str):
             return False
 
 
-test = SuperStr('qwertytrew')
-print(test.is_palindrome())
-print(test.is_repeatance("12"))
+test = SuperStr('qwqwqwqwqw')
+print("is_palindrome ", test.is_palindrome())
+print("is_repeatancetest ", test.is_repeatance("qw"))
