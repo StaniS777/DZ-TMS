@@ -13,19 +13,19 @@ class Sphere:
         self.rad = rad
         volume = (4 / 3) * m.pi * self.rad ** 3
         print(f"Радиус сферы - {self.rad}")
-        print(f"Объём сферы = {volume:.3f} см3")
+        return f"Объём сферы = {volume:.3f} см3"
 
     def get_square(self, rad=1):
         self.rad = rad
         value = 4 * m.pi * self.rad ** 2
         print(f"Радиус сферы - {self.rad}")
-        print(f"Площадь сферы = {value:.3f} см3")
+        return f"Площадь сферы = {value:.3f} см3"
 
     def get_radius(self):
-        print(f"Текущий радиус сферы - {self.rad}")
+        return f"Текущий радиус сферы - {self.rad}"
 
     def get_center(self):
-        print(f"Текущие координаты сферы:\nx:{self.x}\ny:{self.y}\nz:{self.z}")
+        return f"Текущие координаты сферы:\nx:{self.x}\ny:{self.y}\nz:{self.z}"
 
     def set_radius(self, rad=1):
         self.rad = rad
@@ -35,6 +35,7 @@ class Sphere:
             return False
         else:
             return True
+
 
 d = Sphere()
 d.get_volume(5)
