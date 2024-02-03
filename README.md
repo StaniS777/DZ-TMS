@@ -1,2 +1,0 @@
-# DZ-TMS
-Stanislavovich Alexandr
