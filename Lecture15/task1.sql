@@ -21,7 +21,7 @@ publication_year TEXT);
 CREATE TABLE sales(
 id SERIAL PRIMARY KEY,
 book_id INTEGER REFERENCES books(id),
-quantity TEXT);
+quantity INTEGER);
 
 INSERT INTO books (title, author_id, publication_year)
 VALUES
@@ -37,9 +37,9 @@ VALUES
 
 INSERT INTO sales (book_id, quantity)
 VALUES
-(1, '60'),
-(2, '90'),
-(3, '420');
+(1, 60),
+(2, 90),
+(3, 420);
 
 -- task 2
 
@@ -78,7 +78,7 @@ FULL JOIN sales s ON b.author_id=s.book_id;
 
 SELECT a.first_name AS first_name,
 a.last_name AS last_name,
-SUM(CAST(s.quantity AS INTEGER))
+SUM(s.quantity)
 FROM authors a
 INNER JOIN books b ON b.author_id=a.id
 INNER JOIN sales s ON b.author_id=s.book_id
@@ -86,7 +86,7 @@ GROUP BY a.first_name, a.last_name;
 
 SELECT a.first_name AS first_name,
 a.last_name AS last_name,
-SUM(CAST(s.quantity AS INTEGER))
+SUM(s.quantity)
 FROM authors a
 LEFT JOIN books b ON b.author_id=a.id
 LEFT JOIN sales s ON b.author_id=s.book_id
@@ -96,24 +96,24 @@ GROUP BY a.first_name, a.last_name;
 
 SELECT a.first_name AS first_name,
 a.last_name AS last_name,
-SUM(CAST(s.quantity AS INTEGER))
+SUM(s.quantity)
 FROM authors a
 INNER JOIN books b ON b.author_id=a.id
 INNER JOIN sales s ON b.author_id=s.book_id
 GROUP BY a.first_name, a.last_name
-ORDER BY SUM(CAST(s.quantity AS INTEGER)) DESC
+ORDER BY SUM(s.quantity) DESC
 LIMIT 1;
 
-SELECT AVG(CAST(sales.quantity AS INTEGER)) FROM sales;
+SELECT AVG(sales.quantity) FROM sales;
 
 SELECT a.first_name,
 a.last_name,
-AVG(CAST(s.quantity AS INTEGER)) AS quantity
+AVG(s.quantity) AS quantity
 FROM authors a
 JOIN sales s ON s.book_id=a.id
 GROUP BY a.first_name, a.last_name
-HAVING AVG(CAST(s.quantity AS INTEGER)) > (
-SELECT AVG(CAST(sales.quantity AS INTEGER)) FROM sales
+HAVING AVG(s.quantity) > (
+SELECT AVG(sales.quantity) FROM sales
 );
 
 
