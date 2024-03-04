@@ -1,0 +1,26 @@
+{% extends 'home/home.html' %}
+
+{% block content %}
+
+    <h2>Show all books</h2>
+
+    <ul>
+        {% for item in data %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <form action="{{ url_for('home') }}" method="GET">
+        <button type="submit">Go to main menu</button>
+    </form>
+    <!-- <ul>
+        {% for item in data %}
+            <p>
+                <a href="{{ url_for('books.show_all_books') }}">
+                    <li>{{ item }}</li>
+                </a>
+            </p>
+        {% endfor %}
+    </ul> -->
+
+{% endblock %}

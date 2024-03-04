@@ -1,0 +1,17 @@
+{% extends 'home/home.html' %}
+
+{% block content %}
+
+<h2>Delete author</h2>
+
+<form action="{{ url_for('authors.delete_author') }}" method="POST">
+    <label for="author">Enter name:</label>
+    <input id="author" name="author" type="text">
+    <button type="submit">Delete Book</button>
+</form>
+
+<form action="{{ url_for('home') }}" method="GET">
+    <button type="submit">Go to main menu</button>
+</form>
+
+{% endblock %}
