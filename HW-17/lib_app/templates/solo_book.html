@@ -1,0 +1,11 @@
+<ul>
+    {% if books %}
+        {% for book in books %}
+            <li>{{ book }}</li>
+        {% endfor %}
+    {% endif %}
+</ul>
+
+<form action="{{ url_for('menu') }}" method="GET">
+    <button type="submit">Go to main menu</button>
+</form>

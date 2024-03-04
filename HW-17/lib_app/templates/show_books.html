@@ -1,0 +1,9 @@
+<ul>
+    {% for item in data %}
+        <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+
+<form action="{{ url_for('menu') }}" method="GET">
+    <button type="submit">Go to main menu</button>
+</form>

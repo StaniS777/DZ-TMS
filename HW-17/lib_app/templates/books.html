@@ -1,0 +1,6 @@
+<ul>
+    {% for book in books %}
+        <li><a href="{{ url_for('get_book_by_id', book_id=book.id) }}"><b>{{ book.id }}</b> {{ book.name }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('add_book') }}" type="submit">Add new book</a>
